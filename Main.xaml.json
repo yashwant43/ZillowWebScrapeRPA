@@ -4,5 +4,18 @@
   "HelpLink": null,
   "Color": null,
   "OriginalIconFileName": null,
-  "Arguments": []
+  "Arguments": [
+    {
+      "Name": "In_Location",
+      "DisplayName": "In_Location",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Atlanta, GA",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
 }

@@ -1,4 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="1140,4099.2" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.In_Location="Atlanta, GA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_Location" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap:VirtualizedContainerService.HintSize>1524,4285.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -49,6 +58,7 @@
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -120,18 +130,14 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Zillow Home Rental Web Scrape" sap:VirtualizedContainerService.HintSize="787.2,4034.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Zillow Home Rental Web Scrape" sap:VirtualizedContainerService.HintSize="787.2,4220.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://www.zillow.com" Name="str_WebsiteName" />
       <Variable x:TypeArguments="x:String" Name="txt_DT" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Extracted" />
       <Variable x:TypeArguments="x:Double" Default="3" Name="int_Element_Time_Out" />
       <Variable x:TypeArguments="x:Double" Default="2" Name="int_Login_Delay" />
-      <Variable x:TypeArguments="x:String" Name="str_Location">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">San Francisco, CA</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="San Francisco, CA" Name="str_Location" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_URL" />
       <Variable x:TypeArguments="x:String" Name="str_DT" />
       <Variable x:TypeArguments="x:String" Name="str_Output_File_Name" />
@@ -157,21 +163,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="724.8,3945.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="724.8,4132" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Zillow website and scrape the properties of each home on chrome incognito browser.&#xD;&#xA;&#xD;&#xA;Input: Location&#xD;&#xA;Output: Extracted info in CSV" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract info on Zillow: Real Estate" sap:VirtualizedContainerService.HintSize="688,3691.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Zillow website and scrape the properties of each home on chrome incognito browser.&#xA;&#xA;Input: Location&#xA;Output: Extracted info in CSV" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract info on Zillow: Real Estate" sap:VirtualizedContainerService.HintSize="688,3877.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="654.4,3398.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <Sequence sap:VirtualizedContainerService.HintSize="654.4,3584.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3312" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,3496.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +185,20 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="529.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;Location is :&quot;+str_Location]" />
-                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types location in the search bar of zillow website&#xD;&#xA;" ClickBeforeMode="Single" DelayBefore="[int_Login_Delay]" DisplayName="Type Location" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="529.6,302.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Text="[str_Location]" Version="V3">
+                  <Assign sap2010:Annotation.AnnotationText="Assign the input argument to variable&#xD;&#xA;" DisplayName="Location " sap:VirtualizedContainerService.HintSize="529.6,166.4" sap2010:WorkflowViewState.IdRef="Assign_25">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_Location]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[In_Location]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types location in the search bar of zillow website&#xA;" ClickBeforeMode="Single" DelayBefore="[int_Login_Delay]" DisplayName="Type Location" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="529.6,302.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Text="[str_Location]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/" CvElementArea="498, 497, 918, 93" CvType="InputBox" DesignTimeRectangle="500, 496, 816, 94" DesignTimeScaleFactor="1.3125" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='StyledFormControl-c11n-8-100-7__sc-w61kvv-0 gQARPB Input-c11n-8-100-7__sc-4ry0fw-0 eDSSXj' placeholder='Enter an address, neighborhood, city, or ZIP code' aaname='Submit SearchSearchA magnifying glass' /&gt;" Guid="93c3c235-b41a-4743-a17b-d3b547e61944" InformativeScreenshot="a8a4bd49bdfad099b5da4157fe26e01e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zillow: Real Estate, Apartments, Mortgages &amp;amp; Home Values' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -195,14 +214,14 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NTypeInto>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Hits enter to navigate the rentals page&#xD;&#xA;" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Hit Enter" sap:VirtualizedContainerService.HintSize="529.6,262.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
+                  <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Hits enter to navigate the rentals page&#xA;" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Hit Enter" sap:VirtualizedContainerService.HintSize="529.6,262.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NKeyboardShortcuts>
-                  <uix:NCheckState sap2010:Annotation.AnnotationText="Makes sure to select the type of sale. If the element exists executes the code&#xD;&#xA;" DisplayName="Wait for Rent or Sale Screen" sap:VirtualizedContainerService.HintSize="529.6,168.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V3">
+                  <uix:NCheckState sap2010:Annotation.AnnotationText="Makes sure to select the type of sale. If the element exists executes the code&#xA;" DisplayName="Wait for Rent or Sale Screen" sap:VirtualizedContainerService.HintSize="529.6,168.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
@@ -259,27 +278,27 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NExtractData>
-                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="New Data table , with relevant schema such as Address, Sqft, Lot Size.." DataTable="[dt_Extracted]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="529.6,144" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Property_x0020_Address&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Price_x0020__x0024_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Beds&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Baths&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SQFT&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Property_x0020_Type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Year_x0020_Built&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Lot_x0020_Size&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Zillow_x0027_s_x0020_Estimate_x0020__x0024_&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Property_x0020_URL&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;10000&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="New Data table , with relevant schema such as Address, Sqft, Lot Size.." DataTable="[dt_Extracted]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="529.6,144" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_Address&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020__x0024_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Beds&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Baths&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;SQFT&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_Type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Year_x0020_Built&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Lot_x0020_Size&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Zillow_x0027_s_x0020_Estimate_x0020__x0024_&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_URL&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;10000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:BuildDataTable>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Navigates each home rental webpage and extracts the details&#xD;&#xA;" DataTable="[dt_URL]" DisplayName="Navigate to each home url" sap:VirtualizedContainerService.HintSize="529.6,1412.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Navigates each home rental webpage and extracts the details&#xA;" DataTable="[dt_URL]" DisplayName="Navigate to each home url" sap:VirtualizedContainerService.HintSize="529.6,1428.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1163.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1179.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NGoToUrl sap2010:Annotation.AnnotationText="Selects the current data row which is the url link and navigates to the page&#xD;&#xA;" DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="433.6,182.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[CurrentRow(0).ToString]" Version="V3">
+                          <uix:NGoToUrl sap2010:Annotation.AnnotationText="Selects the current data row which is the url link and navigates to the page&#xA;" DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="433.6,182.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="[CurrentRow(0).ToString]" Version="V3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -302,7 +321,7 @@
                               <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <uix:NCheckState sap2010:Annotation.AnnotationText="Checks the type of webpage, execute the extraction based on the webpage type&#xD;&#xA;" DisplayName="Check App State 'Back to search'" sap:VirtualizedContainerService.HintSize="433.6,152.8" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Timeout="3" Version="V3">
+                          <uix:NCheckState sap2010:Annotation.AnnotationText="Checks the type of webpage, execute the extraction based on the webpage type&#xA;" DisplayName="Check App State 'Back to search'" sap:VirtualizedContainerService.HintSize="433.6,168.8" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Timeout="3" Version="V3">
                             <uix:NCheckState.IfExists>
                               <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -762,14 +781,14 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NCheckState>
-                          <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Add the data row having the extracted fields data to the empty data table&#xD;&#xA;" ArrayRow="[{str_Address, str_Price, str_Beds,  str_Baths, str_Sqft, str_Property_Type, str_Built_In, str_LotSize, str_Zestimate, str_URL }]" DataTable="[dt_Extracted]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,288" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                          <ui:AddDataRow DataRow="{x:Null}" sap2010:Annotation.AnnotationText="Add the data row having the extracted fields data to the empty data table&#xA;" ArrayRow="[{str_Address, str_Price, str_Beds,  str_Baths, str_Sqft, str_Property_Type, str_Built_In, str_LotSize, str_Zestimate, str_URL }]" DataTable="[dt_Extracted]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,288" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:AddDataRow>
-                          <ui:OutputDataTable sap2010:Annotation.AnnotationText="Output data table for log purpose&#xD;&#xA;" DataTable="[dt_Extracted]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[txt_DT]">
+                          <ui:OutputDataTable sap2010:Annotation.AnnotationText="Output data table for log purpose&#xA;" DataTable="[dt_Extracted]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="433.6,148" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[txt_DT]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -805,7 +824,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <Assign sap2010:Annotation.AnnotationText="File name which includes the location and the extracted time&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="529.6,165.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign sap2010:Annotation.AnnotationText="File name which includes the location and the extracted time&#xA;" sap:VirtualizedContainerService.HintSize="529.6,166.4" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_Output_File_Name]</OutArgument>
                     </Assign.To>
@@ -818,7 +837,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <ui:WriteCsvFile AddHeaders="True" sap2010:Annotation.AnnotationText="Final Output in CSV&#xD;&#xA;" DataTable="[dt_Extracted]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[&quot;Data\Output\&quot;+str_Output_File_Name+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="529.6,222.4" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
+                  <ui:WriteCsvFile AddHeaders="True" sap2010:Annotation.AnnotationText="Final Output in CSV&#xA;" DataTable="[dt_Extracted]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[&quot;Data\Output\&quot;+str_Output_File_Name+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="529.6,224" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
