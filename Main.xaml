@@ -6,7 +6,7 @@
     <x:Null />
   </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1524,8580</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1228,4512.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,7 +130,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Zillow Home Rental Web Scrape" sap:VirtualizedContainerService.HintSize="1523.2,8515.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Zillow Home Rental Web Scrape" sap:VirtualizedContainerService.HintSize="707.2,4448" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://www.zillow.com" Name="str_WebsiteName" />
       <Variable x:TypeArguments="x:String" Name="txt_DT" />
@@ -163,29 +163,55 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1460.8,8426.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="644.8,4359.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Zillow website and scrape the properties of each home on chrome incognito browser.&#xA;&#xA;Input: Location&#xA;Output: Extracted info in CSV" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract info on Zillow: Real Estate" sap:VirtualizedContainerService.HintSize="1424,8172" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Opens Zillow website and scrape the properties of each home on chrome incognito browser.&#xA;&#xA;Input: Location, In_Location Argument&#xA;Output: Extracted info in CSV - output.csv in output folder" AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Extract info on Zillow: Real Estate" sap:VirtualizedContainerService.HintSize="608,4104.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="1390.4,7879.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
+              <Sequence sap:VirtualizedContainerService.HintSize="574.4,3812" sap2010:WorkflowViewState.IdRef="Sequence_19">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1328,7791.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,3725.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="str_LogFileName" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1265.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;Location is :&quot;+str_Location]" />
-                  <Assign sap2010:Annotation.AnnotationText="Assign the input argument to variable&#xA;" DisplayName="Location " sap:VirtualizedContainerService.HintSize="1265.6,166.4" sap2010:WorkflowViewState.IdRef="Assign_25">
+                  <Assign DisplayName="Log File Name" sap:VirtualizedContainerService.HintSize="449.6,122.4" sap2010:WorkflowViewState.IdRef="Assign_26">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_LogFileName]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Log_File_Zillow_Web_Scrape_"+now.ToString("MM_dd_yyyy_mm_ss")+".txt"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_34" Message="[&quot;Log File Created: &quot;+ str_LogFileName]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:WriteTextFile File="{x:Null}" DisplayName="Write Log to File" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[Now.ToString+&quot; Log File Created: &quot;+ str_LogFileName]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:WriteTextFile>
+                  <Assign sap2010:Annotation.AnnotationText="Assign the input argument to variable&#xA;" DisplayName="Retreive location " sap:VirtualizedContainerService.HintSize="449.6,166.4" sap2010:WorkflowViewState.IdRef="Assign_25">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_Location]</OutArgument>
                     </Assign.To>
@@ -198,7 +224,23 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types location in the search bar of zillow website&#xA;" ClickBeforeMode="Single" DelayAfter="[int_Login_Delay]" DelayBefore="[int_Login_Delay]" DisplayName="Type Location" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1265.6,302.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Text="[str_Location]" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_33" Message="[&quot;Location is :&quot;+str_Location]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[Now.ToString+&quot; Location is :&quot;+str_Location]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
+                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Types location in the search bar of zillow website&#xA;" ClickBeforeMode="Single" DelayAfter="[int_Login_Delay]" DelayBefore="[int_Login_Delay]" DisplayName="Type Location" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="449.6,302.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Text="[str_Location]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/" CvElementArea="498, 497, 918, 93" CvType="InputBox" DesignTimeRectangle="500, 496, 816, 94" DesignTimeScaleFactor="1.3125" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='StyledFormControl-c11n-8-100-7__sc-w61kvv-0 gQARPB Input-c11n-8-100-7__sc-4ry0fw-0 eDSSXj' placeholder='Enter an address, neighborhood, city, or ZIP code' aaname='Submit SearchSearchA magnifying glass' /&gt;" Guid="93c3c235-b41a-4743-a17b-d3b547e61944" InformativeScreenshot="a8a4bd49bdfad099b5da4157fe26e01e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Zillow: Real Estate, Apartments, Mortgages &amp;amp; Home Values' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -214,14 +256,30 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NTypeInto>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Hits enter to navigate the rentals page&#xA;" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Hit Enter" sap:VirtualizedContainerService.HintSize="1265.6,262.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_35" Message="[&quot;Location is entered on Zillow Website :&quot;+str_Location]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[Now.ToString+ &quot; Location is entered on Zillow Website :&quot;+str_Location]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" sap2010:Annotation.AnnotationText="Hits enter to navigate the rentals page&#xA;" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Hit Enter" sap:VirtualizedContainerService.HintSize="449.6,262.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NKeyboardShortcuts>
-                  <uix:NCheckState sap2010:Annotation.AnnotationText="Makes sure to select the type of sale. If the element exists executes the code&#xA;" DisplayName="Wait for Rent or Sale Screen" sap:VirtualizedContainerService.HintSize="1265.6,168.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V3">
+                  <uix:NCheckState sap2010:Annotation.AnnotationText="Makes sure to select the type of sale. If the element exists executes the code&#xA;" DisplayName="Wait for Rent or Sale Screen" sap:VirtualizedContainerService.HintSize="449.6,168.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
@@ -268,7 +326,23 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NExtractData sap2010:Annotation.AnnotationText="Extracts the urls of each home on the rental page, stores the output to a data table" AppendResults="False" ContinueOnError="True" DataTable="[dt_URL]" DisplayName="Get Home URLs" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Home URL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='address' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="1265.6,241.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_37" Message="[&quot;For Sale is clicked &quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[Now.ToString+ &quot; For Sale is clicked on Zillow Website &quot;]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
+                  <uix:NExtractData sap2010:Annotation.AnnotationText="Extracts the urls of each home on the rental page, stores the output to a data table" AppendResults="False" ContinueOnError="True" DataTable="[dt_URL]" DisplayName="Get Home URLs" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Home URL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='address' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="449.6,241.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Version="V3">
                     <uix:NExtractData.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="946, 428, 962, 7870" DesignTimeScaleFactor="1.3125" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='grid-search-results' tag='UL' /&gt;" Guid="0bf26daa-166c-40fd-bf9b-cd47da4eecb4" InformativeScreenshot="98e6c2bfcc409e5b802794b1356cde25.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Atlanta GA Real Estate - Atlanta GA Homes For Sale | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
                     </uix:NExtractData.Target>
@@ -278,23 +352,55 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NExtractData>
-                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="New Data table , with relevant schema such as Address, Sqft, Lot Size.." DataTable="[dt_Extracted]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1265.6,144" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_Address&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020__x0024_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Beds&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Baths&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;SQFT&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_Type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Year_x0020_Built&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Lot_x0020_Size&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Zillow_x0027_s_x0020_Estimate_x0020__x0024_&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_URL&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;10000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_38" Message="[&quot;Home URLs are extracted&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[Now.ToString+ &quot; Home URLs are extracted &quot;]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
+                  <ui:BuildDataTable sap2010:Annotation.AnnotationText="New Data table , with relevant schema such as Address, Sqft, Lot Size.." DataTable="[dt_Extracted]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="449.6,144" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_Address&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;1000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Price_x0020__x0024_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Beds&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;No_x0020_of_x0020_Baths&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;SQFT&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_Type&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Year_x0020_Built&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Lot_x0020_Size&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Zillow_x0027_s_x0020_Estimate_x0020__x0024_&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Property_x0020_URL&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;10000&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:BuildDataTable>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Navigates each home rental webpage and extracts the details&#xA;" DataTable="[dt_URL]" DisplayName="Navigate to each home url" sap:VirtualizedContainerService.HintSize="1265.6,5723.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_39" Message="[&quot; Data Table is created with required  columns&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[Now.ToString+ &quot; Data Table is created with required  columns&quot;]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Navigates each home rental webpage and extracts the details&#xA;" DataTable="[dt_URL]" DisplayName="Navigate to each home url" sap:VirtualizedContainerService.HintSize="449.6,330.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1232,5473.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence DisplayName="Extract Fields from WebPage" sap:VirtualizedContainerService.HintSize="416,80.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -305,14 +411,22 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NGoToUrl>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1169.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Navigating to &quot;+CurrentRow(0).ToString]">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1169.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Navigating to &quot;+CurrentRow(0).ToString]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
+                          <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="1169.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="[Now.ToString+ &quot; Navigating to &quot;+CurrentRow(0).ToString]" UseDefaultEncoding="False">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:AppendLine>
                           <Assign DisplayName="URL" sap:VirtualizedContainerService.HintSize="1169.6,121.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_URL]</OutArgument>
@@ -321,16 +435,16 @@
                               <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <uix:NCheckState sap2010:Annotation.AnnotationText="Checks the type of webpage, execute the extraction based on the webpage type&#xA;" DisplayName="Check App State 'Back to search'" sap:VirtualizedContainerService.HintSize="1169.6,4463.2" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Timeout="3" Version="V3">
+                          <uix:NCheckState sap2010:Annotation.AnnotationText="Checks the type of webpage, execute the extraction based on the webpage type&#xA;" DisplayName="Check App State 'Back to search'" sap:VirtualizedContainerService.HintSize="1169.6,5076" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" Timeout="3" Version="V3">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="558.4,4120.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="558.4,4773.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Extract WebPage Type 1" sap:VirtualizedContainerService.HintSize="496,4030.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <Sequence DisplayName="Extract WebPage Type 1" sap:VirtualizedContainerService.HintSize="496,4683.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -350,6 +464,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[Now.ToString+ &quot; Extracted Address &quot;+str_Address]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Price" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Price]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="191, 642, 241, 41" CvType="AnyWordGroup" DesignTimeRectangle="193, 631, 240, 57" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='$*' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='' /&gt;" Guid="ade44700-ee06-415a-a974-2cd6026fccdc" ImageBase64="" InformativeScreenshot="8e810fb34742d9e0ec14b69b85bfbd20.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -377,6 +499,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_10" Text="[Now.ToString+&quot; Extracted Price &quot;+str_Price]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract No of Beds" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Beds]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="885, 645, 42, 35" CvType="AnyWordGroup" DesignTimeRectangle="885, 641, 48, 42" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='11' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledValueText-fshdp-8-100-0__sc-12ivusx-1 vDKF kHfqMk --medium' /&gt;" Guid="7795ec85-7d64-456e-a25f-344b9fd7de80" ImageBase64="" InformativeScreenshot="0c80d62265eeae02a1affe3ba615a7f6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
@@ -396,6 +526,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_12" Text="[Now.ToString+&quot; Extracted No of Beds &quot;+str_Beds]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract No of Baths" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Baths]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="995, 645, 50, 35" CvType="AnyWordGroup" DesignTimeRectangle="997, 640, 48, 42" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='*' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledValueText-fshdp-8-100-0__sc-12ivusx-1 vDKF kHfqMk --medium' /&gt;" Guid="d034274a-c2f2-41f4-91f5-84c376a3486f" ImageBase64="" InformativeScreenshot="6452045561b4a7b4b540fb60b4deb26d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
@@ -415,6 +553,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_14" Text="[Now.ToString+&quot; Extracted No of baths &quot;+str_Baths]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Sqft" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Sqft]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="1114, 645, 136, 40" CvType="AnyWordGroup" DesignTimeRectangle="1118, 641, 132, 42" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='*' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledValueText-fshdp-8-100-0__sc-12ivusx-1 vDKF kHfqMk --medium' /&gt;" Guid="e1673be7-1cce-4fae-b6a7-2eac4fefe1c5" ImageBase64="" InformativeScreenshot="d7101a99afb882cd6fee4b2e534e2b22.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
@@ -435,14 +581,22 @@
                                       <InArgument x:TypeArguments="x:String">[string.join("", list_Sqft)]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Extracted No of Sqft &quot;+str_Sqft]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Extracted No of Sqft &quot;+str_Sqft]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_16" Text="[Now.ToString+&quot; Extracted No of Sqft &quot;+str_Sqft]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Property Type" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Property_Type]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" DesignTimeRectangle="248, 580, 274, 63" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' type='' /&gt;" Guid="666081f7-c519-4786-8944-adb7320c2c28" ImageBase64="" InformativeScreenshot="b480ff6890dfe73bf7ec0a2595ec9e0d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -462,6 +616,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_18" Text="[Now.ToString+&quot; Extracted property type &quot;+str_Property_Type]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Built in" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Built_In]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3927-Herron-Ln-Atlanta-GA-30349/82628585_zpid/" CvElementArea="546, 496, 350, 99" CvTextArea="603, 535, 122, 20" CvTextArgument="Built in 2006" CvType="Button" DesignTimeRectangle="604, 531, 121, 31" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' parentclass='styles__StyledContainer-fshdp-8-100-0__sc-6k0go5-0 dToFKx' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' parentclass='styles__StyledContainer-fshdp-8-100-0__sc-6k0go5-0 dToFKx' type='' /&gt;" Guid="d6ff6e64-460a-43b6-9b50-7176fb4b100b" ImageBase64="" InformativeScreenshot="0f3bdf7a0e14255fd9f3f2aa4bfcffb7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3927 Herron Ln, Atlanta, GA 30349 | MLS #7351854 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -482,14 +644,22 @@
                                       <InArgument x:TypeArguments="x:String">[string.join("", list_Bult_In)]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Extracted Built In &quot;+str_Built_In]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Extracted Built In &quot;+str_Built_In]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_20" Text="[Now.ToString+&quot; Extracted Built In &quot;+str_Built_In]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract ZEstimate" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Zestimate]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3927-Herron-Ln-Atlanta-GA-30349/82628585_zpid/" CvTextArea="245, 626, 146, 25" CvType="AnyWordGroup" DesignTimeRectangle="248, 620, 142, 39" DesignTimeScaleFactor="1.3125" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' parentclass='styles__StyledContainer-fshdp-8-100-0__sc-6k0go5-0 dToFKx' idx='4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' parentclass='styles__StyledContainer-fshdp-8-100-0__sc-6k0go5-0 dToFKx' type='' /&gt;" Guid="da875bc3-dfa9-44ed-854b-ac0b17ca48dd" ImageBase64="" InformativeScreenshot="92ed469405a181cb72e3ce21daebd30d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3927 Herron Ln, Atlanta, GA 30349 | MLS #7351854 | Zillow' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
@@ -518,6 +688,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_23" Text="[Now.ToString+&quot; Extracted Zestimate &quot;+str_Zestimate]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Lot Size" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_LotSize]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="958, 535, 133, 20" CvType="AnyWordGroup" DesignTimeRectangle="960, 531, 132, 31" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' parentclass='styles__StyledContainer-fshdp-8-100-0__sc-6k0go5-0 dToFKx' idx='3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledFactValue-fshdp-8-100-0__sc-6k0go5-3 vDKF fnSNU' parentclass='styles__StyledContainer-fshdp-8-100-0__sc-6k0go5-0 dToFKx' type='' /&gt;" Guid="5730d900-6388-4218-bdaa-de32a7309a5d" ImageBase64="" InformativeScreenshot="21969e7fb08b6b1803227aad176cb556.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="Selector, CV" Version="V3" Visibility="Interactive">
@@ -546,7 +724,7 @@
                                       <InArgument x:TypeArguments="x:String">[str_LotSize.Replace("sqft lot","")]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,77.6" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Extracted Lot Size &quot;+str_LotSize]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Extracted Lot Size &quot;+str_LotSize]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -554,18 +732,26 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,77.6" sap2010:WorkflowViewState.IdRef="AppendLine_24" Text="[Now.ToString+&quot; Extracted Lot Size &quot;+str_LotSize]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                 </Sequence>
                               </Sequence>
                             </uix:NCheckState.IfExists>
                             <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="558.4,3669.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="558.4,4231.2" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence DisplayName="Extract WebPage Type 2" sap:VirtualizedContainerService.HintSize="496,3579.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <Sequence DisplayName="Extract WebPage Type 2" sap:VirtualizedContainerService.HintSize="496,4140.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -585,6 +771,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[Now.ToString+ &quot; Extracted Address &quot;+str_Address]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Price" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_21" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Price]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="191, 642, 241, 41" CvType="AnyWordGroup" DesignTimeRectangle="193, 631, 240, 57" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='$*' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='' /&gt;" Guid="ade44700-ee06-415a-a974-2cd6026fccdc" ImageBase64="" InformativeScreenshot="8e810fb34742d9e0ec14b69b85bfbd20.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -612,6 +806,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_11" Text="[Now.ToString+&quot; Extracted Price &quot;+str_Price]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract No of Beds" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_22" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Beds]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="885, 645, 42, 35" CvType="AnyWordGroup" DesignTimeRectangle="885, 641, 48, 42" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='11' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledValueText-fshdp-8-100-0__sc-12ivusx-1 vDKF kHfqMk --medium' /&gt;" Guid="7795ec85-7d64-456e-a25f-344b9fd7de80" ImageBase64="" InformativeScreenshot="0c80d62265eeae02a1affe3ba615a7f6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
@@ -631,6 +833,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_13" Text="[Now.ToString+&quot; Extracted No of Beds &quot;+str_Beds]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract No of Baths" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_23" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Baths]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="995, 645, 50, 35" CvType="AnyWordGroup" DesignTimeRectangle="997, 640, 48, 42" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='*' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledValueText-fshdp-8-100-0__sc-12ivusx-1 vDKF kHfqMk --medium' /&gt;" Guid="d034274a-c2f2-41f4-91f5-84c376a3486f" ImageBase64="" InformativeScreenshot="6452045561b4a7b4b540fb60b4deb26d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
@@ -650,6 +860,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_15" Text="[Now.ToString+&quot; Extracted No of baths &quot;+str_Baths]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Sqft" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_24" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Sqft]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/3540-Woodhaven-Rd-NW-Atlanta-GA-30305/35907299_zpid/" CvTextArea="1114, 645, 136, 40" CvType="AnyWordGroup" DesignTimeRectangle="1118, 641, 132, 42" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='*' parentid='search-detail-lightbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='search-detail-lightbox' tag='SPAN' type='' class='Text-c11n-8-100-0__sc-aiai24-0 styles__StyledValueText-fshdp-8-100-0__sc-12ivusx-1 vDKF kHfqMk --medium' /&gt;" Guid="e1673be7-1cce-4fae-b6a7-2eac4fefe1c5" ImageBase64="" InformativeScreenshot="d7101a99afb882cd6fee4b2e534e2b22.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='3540 Woodhaven Rd NW, Atlanta, GA 30305 | MLS #7307715 | Zillow' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
@@ -678,6 +896,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_28" Message="[&quot;Extracted property type &quot;+str_Property_Type]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:LogMessage>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Property Type" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_25" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Property_Type]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/1836-Homestead-Ave-Atlanta-GA-30306/14532356_zpid/" CvElementArea="201, 601, 344, 66" CvTextArea="256, 623, 225, 23" CvTextArgument="Single family residence" CvType="Button" DesignTimeRectangle="258, 618, 224, 31" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-1__sc-aiai24-0 hdp__sc-6k0go5-3 jbRdkh llcOCk' parentclass='hdp__sc-6k0go5-0 dyirCl' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-1__sc-aiai24-0 hdp__sc-6k0go5-3 jbRdkh llcOCk' parentclass='hdp__sc-6k0go5-0 dyirCl' type='' /&gt;" Guid="391e27c0-ce6d-4ef5-847a-3b6f2979b995" ImageBase64="" InformativeScreenshot="14172c220c4439b21ab353d2207f2aae.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='1836 Homestead Ave, Atlanta, GA 30306 | MLS #10270830 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -689,7 +915,7 @@
                                       </uix:TargetAnchorable>
                                     </uix:NGetText.Target>
                                   </uix:NGetText>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_28" Message="[&quot;Extracted property type &quot;+str_Property_Type]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_36" Message="[&quot;Extracted property type &quot;+str_Property_Type]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -697,6 +923,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_19" Text="[Now.ToString+&quot; Extracted property type &quot;+str_Property_Type]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Built in" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_26" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_Built_In]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/1836-Homestead-Ave-Atlanta-GA-30306/14532356_zpid/" CvElementArea="550, 600, 346, 67" CvType="InputBox" DesignTimeRectangle="609, 618, 122, 31" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-1__sc-aiai24-0 hdp__sc-6k0go5-3 jbRdkh llcOCk' parentclass='hdp__sc-6k0go5-0 dyirCl' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-1__sc-aiai24-0 hdp__sc-6k0go5-3 jbRdkh llcOCk' parentclass='hdp__sc-6k0go5-0 dyirCl' type='' /&gt;" Guid="17f2248b-9b57-4c61-8bd8-cff5d5854a74" ImageBase64="" InformativeScreenshot="63e643bbc59c64d89bb3e5ef08cf049d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='1836 Homestead Ave, Atlanta, GA 30306 | MLS #10270830 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -717,22 +951,38 @@
                                       <InArgument x:TypeArguments="x:String">[string.join("", list_Bult_In)]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_29" Message="[&quot;Extracted Built In &quot;+str_Built_In]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_29" Message="[&quot;Extracted Built In &quot;+str_Built_In]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,184" sap2010:WorkflowViewState.IdRef="LogMessage_30" Message="[&quot;Extracted Zestimate &quot;+ &quot;Not Available&quot;]">
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_21" Text="[Now.ToString+&quot; Extracted Built In &quot;+str_Built_In]" UseDefaultEncoding="False">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_30" Message="[&quot;Extracted Zestimate &quot;+ &quot;Not Available&quot;]">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_22" Text="[Now.ToString+&quot; Extracted Built In &quot;+str_Built_In]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                   <uix:NGetText ContinueOnError="True" DisplayName="Extract Lot Size" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="NGetText_28" ScopeIdentifier="53a6ac83-d4ec-49db-b394-a922c4104f98" TextString="[str_LotSize]" Timeout="[int_Element_Time_Out]" Version="V3">
                                     <uix:NGetText.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.zillow.com/homedetails/1836-Homestead-Ave-Atlanta-GA-30306/14532356_zpid/" CvElementArea="901, 600, 345, 66" CvType="InputBox" DesignTimeRectangle="960, 618, 101, 31" DesignTimeScaleFactor="1.3125" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-1__sc-aiai24-0 hdp__sc-6k0go5-3 jbRdkh llcOCk' parentclass='hdp__sc-6k0go5-0 dyirCl' idx='3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' class='Text-c11n-8-100-1__sc-aiai24-0 hdp__sc-6k0go5-3 jbRdkh llcOCk' parentclass='hdp__sc-6k0go5-0 dyirCl' type='' /&gt;" Guid="78e8bc37-6346-4e45-8641-6f93f1de7145" ImageBase64="" InformativeScreenshot="81b14ee4fef0d18da4faa57e99072048.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='1836 Homestead Ave, Atlanta, GA 30306 | MLS #10270830 | Zillow' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
@@ -753,14 +1003,22 @@
                                       <InArgument x:TypeArguments="x:String">[string.join(",", list_LotSize)]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,168.8" sap2010:WorkflowViewState.IdRef="LogMessage_31" Message="[&quot;Extracted Lot Size &quot;+str_LotSize]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_31" Message="[&quot;Extracted Lot Size &quot;+str_LotSize]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
+                                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="433.6,77.6" sap2010:WorkflowViewState.IdRef="AppendLine_25" Text="[Now.ToString+&quot; Extracted Lot Size &quot;+str_LotSize]" UseDefaultEncoding="False">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:AppendLine>
                                 </Sequence>
                               </Sequence>
                             </uix:NCheckState.IfNotExists>
@@ -806,7 +1064,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ForEachRow>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1265.6,92.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,253.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
@@ -824,7 +1082,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <Assign sap2010:Annotation.AnnotationText="File name which includes the location and the extracted time&#xA;" sap:VirtualizedContainerService.HintSize="1265.6,166.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign sap2010:Annotation.AnnotationText="File name which includes the location and the extracted time&#xA;" DisplayName="Output File Name" sap:VirtualizedContainerService.HintSize="449.6,166.4" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_Output_File_Name]</OutArgument>
                     </Assign.To>
@@ -837,13 +1095,29 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <ui:WriteCsvFile AddHeaders="True" sap2010:Annotation.AnnotationText="Final Output in CSV&#xA;" DataTable="[dt_Extracted]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[&quot;Data\Output\&quot;+str_Output_File_Name+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="1265.6,224" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
+                  <ui:WriteCsvFile AddHeaders="True" sap2010:Annotation.AnnotationText="Final Output in CSV&#xA;" DataTable="[dt_Extracted]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[&quot;Data\Output\&quot;+str_Output_File_Name+&quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="449.6,239.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:WriteCsvFile>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,92.8" sap2010:WorkflowViewState.IdRef="AppendLine_26" Text="[Now.ToString+&quot; Output file is created and saved in  &quot;+str_Output_File_Name+&quot;.csv&quot;]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
+                  <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Logs\&quot;+str_LogFileName]" sap:VirtualizedContainerService.HintSize="449.6,77.6" sap2010:WorkflowViewState.IdRef="AppendLine_27" Text="[Now.ToString+&quot; Process ended&quot;]" UseDefaultEncoding="False">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AppendLine>
                 </Sequence>
               </Sequence>
             </ActivityAction>
@@ -859,7 +1133,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1427.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="611.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

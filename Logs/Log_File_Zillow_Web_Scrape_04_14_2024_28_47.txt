@@ -1,0 +1,98 @@
+04/14/2024 11:28:47 Log File Created: Log_File_Zillow_Web_Scrape_04_14_2024_28_47.txt
+04/14/2024 11:28:47 Location is :San Francisco, CA
+04/14/2024 11:28:54 Location is entered on Zillow Website :San Francisco, CA
+04/14/2024 11:28:55 For Sale is clicked on Zillow Website 
+04/14/2024 11:28:58 Home URLs are extracted 
+04/14/2024 11:28:58 Data Table is created with required  columns
+04/14/2024 11:28:58 Navigating to https://www.zillow.com/homedetails/900-N-Point-St-CB34J-San-Francisco-CA-94109/346266173_zpid/
+04/14/2024 11:29:04 Extracted Address 900 N Point St #CB34J, San Francisco, CA 94109
+04/14/2024 11:29:05 Extracted Price 198,000
+04/14/2024 11:29:05 Extracted No of Beds 2
+04/14/2024 11:29:06 Extracted No of baths 2
+04/14/2024 11:29:07 Extracted No of Sqft 1,141
+04/14/2024 11:29:07 Extracted property type Condominium
+04/14/2024 11:29:08 Extracted Built In 
+04/14/2024 11:29:08 Extracted Zestimate 
+04/14/2024 11:29:09 Extracted Lot Size 
+04/14/2024 11:29:10 Navigating to https://www.zillow.com/homedetails/984-Moscow-St-San-Francisco-CA-94112/15177041_zpid/
+04/14/2024 11:29:13 Extracted Address 984 Moscow St, San Francisco, CA 94112
+04/14/2024 11:29:13 Extracted Price 499,000
+04/14/2024 11:29:14 Extracted No of Beds 3
+04/14/2024 11:29:15 Extracted No of baths 2
+04/14/2024 11:29:15 Extracted No of Sqft 1,350
+04/14/2024 11:29:16 Extracted property type Single Family Residence
+04/14/2024 11:29:16 Extracted Built In 1914
+04/14/2024 11:29:17 Extracted Zestimate 
+04/14/2024 11:29:18 Extracted Lot Size 2,500
+04/14/2024 11:29:18 Navigating to https://www.zillow.com/homedetails/421-Velasco-Ave-San-Francisco-CA-94134/15175704_zpid/
+04/14/2024 11:29:21 Extracted Address 421 Velasco Ave, San Francisco, CA 94134
+04/14/2024 11:29:21 Extracted Price 585,000
+04/14/2024 11:29:22 Extracted No of Beds 3
+04/14/2024 11:29:23 Extracted No of baths 2
+04/14/2024 11:29:24 Extracted No of Sqft 1,325
+04/14/2024 11:29:24 Extracted property type Single Family Residence
+04/14/2024 11:29:25 Extracted Built In 1952
+04/14/2024 11:29:25 Extracted Zestimate 644,800
+04/14/2024 11:29:26 Extracted Lot Size 2,495
+04/14/2024 11:29:27 Navigating to https://www.zillow.com/homedetails/1674-40th-Ave-San-Francisco-CA-94122/15108530_zpid/
+04/14/2024 11:29:31 Extracted Address 1674 40th Ave, San Francisco, CA 94122
+04/14/2024 11:29:31 Extracted Price 1,095,000
+04/14/2024 11:29:32 Extracted No of Beds 2
+04/14/2024 11:29:33 Extracted No of baths 1
+04/14/2024 11:29:33 Extracted No of Sqft 1,150
+04/14/2024 11:29:34 Extracted property type Single Family Residence
+04/14/2024 11:29:34 Extracted Built In 1938
+04/14/2024 11:29:35 Extracted Zestimate 1,290,400
+04/14/2024 11:29:36 Extracted Lot Size 2,996
+04/14/2024 11:29:36 Navigating to https://www.zillow.com/homedetails/1010-14th-St-San-Francisco-CA-94114/15126991_zpid/
+04/14/2024 11:29:39 Extracted Address 1010 14th St, San Francisco, CA 94114
+04/14/2024 11:29:40 Extracted Price 1,995,000
+04/14/2024 11:29:41 Extracted No of Beds 3
+04/14/2024 11:29:42 Extracted No of baths 3
+04/14/2024 11:29:42 Extracted No of Sqft 2,250
+04/14/2024 11:29:43 Extracted property type Single Family Residence
+04/14/2024 11:29:43 Extracted Built In 1904
+04/14/2024 11:29:44 Extracted Zestimate 
+04/14/2024 11:29:44 Extracted Lot Size 
+04/14/2024 11:29:45 Navigating to https://www.zillow.com/homedetails/212-Howth-St-San-Francisco-CA-94112/15190917_zpid/
+04/14/2024 11:29:48 Extracted Address 212 Howth St, San Francisco, CA 94112
+04/14/2024 11:29:49 Extracted Price 995,000
+04/14/2024 11:29:50 Extracted No of Beds 5
+04/14/2024 11:29:50 Extracted No of baths 5
+04/14/2024 11:29:51 Extracted No of Sqft 2,069
+04/14/2024 11:29:52 Extracted property type Single Family Residence
+04/14/2024 11:29:52 Extracted Built In 1910
+04/14/2024 11:29:53 Extracted Zestimate 1,146,100
+04/14/2024 11:29:53 Extracted Lot Size 2,252
+04/14/2024 11:29:54 Navigating to https://www.zillow.com/homedetails/146-1-2-Noe-St-San-Francisco-CA-94114/347527743_zpid/
+04/14/2024 11:29:58 Extracted Address 146 1/2 Noe St, San Francisco, CA 94114
+04/14/2024 11:29:58 Extracted Price 1,454,000
+04/14/2024 11:29:59 Extracted No of Beds 3
+04/14/2024 11:30:00 Extracted No of baths 2
+04/14/2024 11:30:00 Extracted No of Sqft 4,200
+04/14/2024 11:30:01 Extracted property type Condominium
+04/14/2024 11:30:02 Extracted Built In 1905
+04/14/2024 11:30:02 Extracted Zestimate 
+04/14/2024 11:30:03 Extracted Lot Size 
+04/14/2024 11:30:03 Navigating to https://www.zillow.com/homedetails/1905-Baker-St-San-Francisco-CA-94115/15082124_zpid/
+04/14/2024 11:30:07 Extracted Address 1905 Baker St, San Francisco, CA 94115
+04/14/2024 11:30:08 Extracted Price 2,495,000
+04/14/2024 11:30:08 Extracted No of Beds 3
+04/14/2024 11:30:09 Extracted No of baths 3
+04/14/2024 11:30:10 Extracted No of Sqft 2,065
+04/14/2024 11:30:10 Extracted property type Single Family Residence
+04/14/2024 11:30:11 Extracted Built In 1900
+04/14/2024 11:30:11 Extracted Zestimate 2,655,700
+04/14/2024 11:30:12 Extracted Lot Size 2,614
+04/14/2024 11:30:13 Navigating to https://www.zillow.com/homedetails/2359-15th-Ave-San-Francisco-CA-94116/15120173_zpid/
+04/14/2024 11:30:15 Extracted Address 2359 15th Ave, San Francisco, CA 94116
+04/14/2024 11:30:16 Extracted Price 1,195,000
+04/14/2024 11:30:17 Extracted No of Beds 3
+04/14/2024 11:30:18 Extracted No of baths 1
+04/14/2024 11:30:18 Extracted No of Sqft 1,450
+04/14/2024 11:30:19 Extracted property type Single Family Residence
+04/14/2024 11:30:19 Extracted Built In 1927
+04/14/2024 11:30:20 Extracted Zestimate 1,374,700
+04/14/2024 11:30:21 Extracted Lot Size 2,927
+04/14/2024 11:30:21 Output file is created and saved in  Zillow_Homes_San Francisco, CA_04_14_2024_11_30_21.csv
+04/14/2024 11:30:21 Process ended
