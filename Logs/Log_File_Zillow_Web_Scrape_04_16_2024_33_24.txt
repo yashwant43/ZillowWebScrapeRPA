@@ -1,0 +1,13 @@
+04/16/2024 23:33:24 Log File Created: Log_File_Zillow_Web_Scrape_04_16_2024_33_24.txt
+04/16/2024 23:33:25 Location is :San Francisco, CA
+04/16/2024 23:33:29 Location is entered on Zillow Website :San Francisco, CA
+04/16/2024 23:33:31 For Sale is clicked on Zillow Website 
+04/16/2024 23:33:34 Home URLs are extracted 
+04/16/2024 23:33:34 Data Table is created with required  columns
+04/16/2024 23:33:35 Navigating to https://www.zillow.com/homedetails/421-Velasco-Ave-San-Francisco-CA-94134/15175704_zpid/
+04/16/2024 23:33:40 Extracted Address 421 Velasco Ave, San Francisco, CA 94134
+04/16/2024 23:33:41 Extracted Price 585,000
+04/16/2024 23:33:42 Extracted No of Beds 3
+04/16/2024 23:33:42 Extracted No of baths 2
+04/16/2024 23:33:43 Extracted No of Sqft 1,325
+04/16/2024 23:33:50 Extracted property type 
