@@ -1,0 +1,12 @@
+04/17/2024 11:53:44 Log File Created: Log_File_Zillow_Web_Scrape_04_17_2024_53_43.txt
+04/17/2024 11:53:46 Location is :Dallas, GA
+04/17/2024 11:53:51 Location is entered on Zillow Website :Dallas, GA
+04/17/2024 11:53:56 For Sale is clicked on Zillow Website 
+04/17/2024 11:53:58 Home URLs are extracted 
+04/17/2024 11:54:00 Data Table is created with required  columns
+04/17/2024 11:54:03 Navigating to https://www.zillow.com/homedetails/213-Vineyard-Dr-Dallas-GA-30132/237708006_zpid/
+04/17/2024 11:54:14 Extracted Address 213 Vineyard Dr, Dallas, GA 30132
+04/17/2024 11:54:14 Extracted Price 450,000
+04/17/2024 11:54:15 Extracted No of Beds 6
+04/17/2024 11:54:16 Extracted No of baths 4
+04/17/2024 11:54:17 Extracted property type Single family residence

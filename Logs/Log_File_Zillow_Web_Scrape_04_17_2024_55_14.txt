@@ -1,0 +1,3 @@
+04/17/2024 11:55:15 Log File Created: Log_File_Zillow_Web_Scrape_04_17_2024_55_14.txt
+04/17/2024 11:55:16 Location is :Dallas, GA
+04/17/2024 11:55:22 Location is entered on Zillow Website :Dallas, GA

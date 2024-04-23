@@ -1,0 +1,97 @@
+04/22/2024 20:24:10 Log File Created: Log_File_Zillow_Web_Scrape_04_22_2024_24_09.txt
+04/22/2024 20:24:10 Location is :Dallas, GA
+04/22/2024 20:24:18 Location is entered on Zillow Website :Dallas, GA
+04/22/2024 20:24:26 For Sale is clicked on Zillow Website 
+04/22/2024 20:24:31 Home URLs are extracted 
+04/22/2024 20:24:31 Data Table is created with required  columns
+04/22/2024 20:24:32 Navigating to https://www.zillow.com/homedetails/331-Willow-Pointe-Dr-Dallas-GA-30157/237720488_zpid/
+04/22/2024 20:24:45 Extracted Address 331 Willow Pointe Dr, Dallas, GA 30157
+04/22/2024 20:24:47 Extracted Price 525,000
+04/22/2024 20:24:50 Extracted No of Beds 4
+04/22/2024 20:24:53 Extracted No of baths 4
+04/22/2024 20:24:59 Extracted property type Single family residence
+04/22/2024 20:25:03 Extracted Built In 2006
+04/22/2024 20:25:03 Extracted Built In 2006
+04/22/2024 20:25:06 Extracted Lot Size 035
+04/22/2024 20:25:07 Navigating to https://www.zillow.com/homedetails/174-W-Chestnut-Way-Dallas-GA-30132/237707515_zpid/
+04/22/2024 20:25:18 Extracted Address 174 W Chestnut Way, Dallas, GA 30132
+04/22/2024 20:25:21 Extracted Price 400,000
+04/22/2024 20:25:24 Extracted No of Beds 3
+04/22/2024 20:25:26 Extracted No of baths 3
+04/22/2024 20:25:29 Extracted No of Sqft 2,112
+04/22/2024 20:25:32 Extracted property type Single Family Residence
+04/22/2024 20:25:35 Extracted Built In 2005
+04/22/2024 20:25:38 Extracted Zestimate 403,300
+04/22/2024 20:25:40 Extracted Lot Size 052
+04/22/2024 20:25:41 Navigating to https://www.zillow.com/homedetails/1101-Nebo-Rd-Dallas-GA-30157/237741959_zpid/
+04/22/2024 20:25:52 Extracted Address 1101 Nebo Rd, Dallas, GA 30157
+04/22/2024 20:25:54 Extracted Price 295,000
+04/22/2024 20:25:57 Extracted No of Beds 3
+04/22/2024 20:26:00 Extracted No of baths 2
+04/22/2024 20:26:03 Extracted No of Sqft 1,776
+04/22/2024 20:26:05 Extracted property type Single Family Residence, Residential
+04/22/2024 20:26:09 Extracted Built In 2008
+04/22/2024 20:26:11 Extracted Zestimate 298,100
+04/22/2024 20:26:14 Extracted Lot Size 062
+04/22/2024 20:26:14 Navigating to https://www.zillow.com/homedetails/8111-Dallas-Acworth-Hwy-Dallas-GA-30132/237701734_zpid/
+04/22/2024 20:27:02 Extracted Address 8111 Dallas Acworth Hwy, Dallas, GA 30132
+04/22/2024 20:27:04 Extracted Price 525,000
+04/22/2024 20:27:07 Extracted No of Beds 3
+04/22/2024 20:27:10 Extracted No of baths 3
+04/22/2024 20:27:13 Extracted No of Sqft 2,737
+04/22/2024 20:27:15 Extracted property type Single Family Residence
+04/22/2024 20:27:18 Extracted Built In 1977
+04/22/2024 20:27:21 Extracted Zestimate 528,600
+04/22/2024 20:27:24 Extracted Lot Size 1831
+04/22/2024 20:27:24 Navigating to https://www.zillow.com/homedetails/26-Buck-Trl-Dallas-GA-30132/237703425_zpid/
+04/22/2024 20:27:36 Extracted Address 26 Buck Trl, Dallas, GA 30132
+04/22/2024 20:27:39 Extracted Price 375,000
+04/22/2024 20:27:42 Extracted No of Beds 4
+04/22/2024 20:27:44 Extracted No of baths 3
+04/22/2024 20:27:47 Extracted No of Sqft 1,793
+04/22/2024 20:27:50 Extracted property type Single Family Residence
+04/22/2024 20:27:53 Extracted Built In 2020
+04/22/2024 20:27:56 Extracted Zestimate 376,900
+04/22/2024 20:27:58 Extracted Lot Size 055
+04/22/2024 20:27:59 Navigating to https://www.zillow.com/homedetails/186-Kessle-Ln-Dallas-GA-30132/237704127_zpid/
+04/22/2024 20:28:09 Extracted Address 186 Kessle Ln, Dallas, GA 30132
+04/22/2024 20:28:12 Extracted Price 360,000
+04/22/2024 20:28:15 Extracted No of Beds 4
+04/22/2024 20:28:18 Extracted No of baths 3
+04/22/2024 20:28:21 Extracted No of Sqft 2,544
+04/22/2024 20:28:23 Extracted property type Single Family Residence
+04/22/2024 20:28:26 Extracted Built In 2003
+04/22/2024 20:28:29 Extracted Zestimate 362,100
+04/22/2024 20:28:32 Extracted Lot Size 047
+04/22/2024 20:28:32 Navigating to https://www.zillow.com/homedetails/211-Hugh-Ave-Dallas-GA-30132/237708959_zpid/
+04/22/2024 20:28:42 Extracted Address 211 Hugh Ave, Dallas, GA 30132
+04/22/2024 20:28:45 Extracted Price 325,000
+04/22/2024 20:28:48 Extracted No of Beds 3
+04/22/2024 20:28:50 Extracted No of baths 3
+04/22/2024 20:28:53 Extracted No of Sqft 
+04/22/2024 20:28:56 Extracted property type Single Family Residence
+04/22/2024 20:28:59 Extracted Built In 2003
+04/22/2024 20:29:02 Extracted Zestimate 
+04/22/2024 20:29:04 Extracted Lot Size 139
+04/22/2024 20:29:05 Navigating to https://www.zillow.com/homedetails/62-Mill-Pointe-Cv-Dallas-GA-30157/237735349_zpid/
+04/22/2024 20:29:15 Extracted Address 62 Mill Pointe Cv, Dallas, GA 30157
+04/22/2024 20:29:17 Extracted Price 374,900
+04/22/2024 20:29:20 Extracted No of Beds 4
+04/22/2024 20:29:23 Extracted No of baths 3
+04/22/2024 20:29:26 Extracted No of Sqft 2,254
+04/22/2024 20:29:28 Extracted property type Single Family Residence
+04/22/2024 20:29:32 Extracted Built In 1996
+04/22/2024 20:29:34 Extracted Zestimate 376,000
+04/22/2024 20:29:37 Extracted Lot Size 156
+04/22/2024 20:29:38 Navigating to https://www.zillow.com/homedetails/103-Overlook-Dr-Dallas-GA-30157/237716735_zpid/
+04/22/2024 20:29:48 Extracted Address 103 Overlook Dr, Dallas, GA 30157
+04/22/2024 20:29:50 Extracted Price 400,000
+04/22/2024 20:29:53 Extracted No of Beds 4
+04/22/2024 20:29:56 Extracted No of baths 3
+04/22/2024 20:29:59 Extracted No of Sqft 4,620
+04/22/2024 20:30:01 Extracted property type Single Family Residence
+04/22/2024 20:30:04 Extracted Built In 2003
+04/22/2024 20:30:07 Extracted Zestimate 395,400
+04/22/2024 20:30:10 Extracted Lot Size 025
+04/22/2024 20:30:10 Output file is created and saved in  Zillow_Homes_Dallas, GA_04_22_2024_20_30_10.csv
+04/22/2024 20:30:10 Process ended

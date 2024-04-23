@@ -1,0 +1,94 @@
+04/17/2024 11:55:39 Log File Created: Log_File_Zillow_Web_Scrape_04_17_2024_55_39.txt
+04/17/2024 11:55:40 Location is :Dallas, GA
+04/17/2024 11:55:47 Location is entered on Zillow Website :Dallas, GA
+04/17/2024 11:55:57 For Sale is clicked on Zillow Website 
+04/17/2024 11:56:02 Home URLs are extracted 
+04/17/2024 11:56:03 Data Table is created with required  columns
+04/17/2024 11:56:06 Navigating to https://www.zillow.com/homedetails/213-Vineyard-Dr-Dallas-GA-30132/237708006_zpid/
+04/17/2024 11:56:19 Extracted Address 213 Vineyard Dr, Dallas, GA 30132
+04/17/2024 11:56:23 Extracted Price 450,000
+04/17/2024 11:56:27 Extracted No of Beds 6
+04/17/2024 11:56:31 Extracted No of baths 4
+04/17/2024 11:56:39 Extracted property type Single family residence
+04/17/2024 11:56:44 Extracted Built In 2002
+04/17/2024 11:56:45 Extracted Built In 2002
+04/17/2024 11:56:49 Extracted Lot Size 046
+04/17/2024 11:56:53 Navigating to https://www.zillow.com/homedetails/110-Amber-Ln-Dallas-GA-30157/237725457_zpid/
+04/17/2024 11:57:06 Extracted Address 110 Amber Ln, Dallas, GA 30157
+04/17/2024 11:57:10 Extracted Price 290,000
+04/17/2024 11:57:14 Extracted No of Beds 4
+04/17/2024 11:57:17 Extracted No of baths 2
+04/17/2024 11:57:25 Extracted property type Single family residence
+04/17/2024 11:57:30 Extracted Built In 1991
+04/17/2024 11:57:31 Extracted Built In 1991
+04/17/2024 11:57:35 Extracted Lot Size 049
+04/17/2024 11:57:38 Navigating to https://www.zillow.com/homedetails/331-Willow-Pointe-Dr-Dallas-GA-30157/237720488_zpid/
+04/17/2024 11:57:52 Extracted Address 331 Willow Pointe Dr, Dallas, GA 30157
+04/17/2024 11:57:55 Extracted Price 525,000
+04/17/2024 11:57:59 Extracted No of Beds 4
+04/17/2024 11:58:03 Extracted No of baths 4
+04/17/2024 11:58:10 Extracted property type Single family residence
+04/17/2024 11:58:15 Extracted Built In 2006
+04/17/2024 11:58:16 Extracted Built In 2006
+04/17/2024 11:58:20 Extracted Lot Size 035
+04/17/2024 11:58:24 Navigating to https://www.zillow.com/homedetails/147-Oliver-Dr-Dallas-GA-30132/237704948_zpid/
+04/17/2024 11:58:36 Extracted Address 147 Oliver Dr, Dallas, GA 30132
+04/17/2024 11:58:40 Extracted Price 339,000
+04/17/2024 11:58:43 Extracted No of Beds 4
+04/17/2024 11:58:47 Extracted No of baths 4
+04/17/2024 11:58:51 Extracted No of Sqft 2,442
+04/17/2024 11:58:55 Extracted property type Single Family Residence
+04/17/2024 11:59:00 Extracted Built In 2006
+04/17/2024 11:59:03 Extracted Zestimate 
+04/17/2024 11:59:08 Extracted Lot Size 081
+04/17/2024 11:59:11 Navigating to https://www.zillow.com/homedetails/131-Glenn-St-Dallas-GA-30132/237718371_zpid/
+04/17/2024 11:59:23 Extracted Address 131 Glenn St, Dallas, GA 30132
+04/17/2024 11:59:27 Extracted Price 225,000
+04/17/2024 11:59:31 Extracted No of Beds 3
+04/17/2024 11:59:34 Extracted No of baths 2
+04/17/2024 11:59:38 Extracted No of Sqft 1,404
+04/17/2024 11:59:42 Extracted property type Single Family Residence
+04/17/2024 11:59:47 Extracted Built In 1954
+04/17/2024 11:59:50 Extracted Zestimate 217,600
+04/17/2024 11:59:55 Extracted Lot Size 096
+04/17/2024 11:59:58 Navigating to https://www.zillow.com/homedetails/68-Spring-Leaf-Pl-Dallas-GA-30157/237716033_zpid/
+04/17/2024 12:00:11 Extracted Address 68 Spring Leaf Pl, Dallas, GA 30157
+04/17/2024 12:00:14 Extracted Price 282,000
+04/17/2024 12:00:18 Extracted No of Beds 3
+04/17/2024 12:00:22 Extracted No of baths 3
+04/17/2024 12:00:29 Extracted property type Single family residence
+04/17/2024 12:00:34 Extracted Built In 2001
+04/17/2024 12:00:35 Extracted Built In 2001
+04/17/2024 12:00:40 Extracted Lot Size 049
+04/17/2024 12:00:43 Navigating to https://www.zillow.com/homedetails/452-Villa-Rica-Hwy-Dallas-GA-30157/237724422_zpid/
+04/17/2024 12:00:55 Extracted Address 452 Villa Rica Hwy, Dallas, GA 30157
+04/17/2024 12:00:59 Extracted Price 235,000
+04/17/2024 12:01:03 Extracted No of Beds 3
+04/17/2024 12:01:06 Extracted No of baths 2
+04/17/2024 12:01:10 Extracted No of Sqft 
+04/17/2024 12:01:14 Extracted property type Single Family Residence
+04/17/2024 12:01:18 Extracted Built In 1952
+04/17/2024 12:01:22 Extracted Zestimate 232,300
+04/17/2024 12:01:27 Extracted Lot Size 076
+04/17/2024 12:01:30 Navigating to https://www.zillow.com/homedetails/62-Andrew-Jackson-Ct-Dallas-GA-30157/237705961_zpid/
+04/17/2024 12:01:42 Extracted Address 62 Andrew Jackson Ct, Dallas, GA 30157
+04/17/2024 12:01:45 Extracted Price 375,000
+04/17/2024 12:01:49 Extracted No of Beds 5
+04/17/2024 12:01:52 Extracted No of baths 2
+04/17/2024 12:01:56 Extracted No of Sqft 1,956
+04/17/2024 12:02:00 Extracted property type Single Family Residence
+04/17/2024 12:02:05 Extracted Built In 1988
+04/17/2024 12:02:09 Extracted Zestimate 367,800
+04/17/2024 12:02:13 Extracted Lot Size 046
+04/17/2024 12:02:16 Navigating to https://www.zillow.com/homedetails/201-Depot-Ln-Dallas-GA-30157/237725372_zpid/
+04/17/2024 12:02:28 Extracted Address 201 Depot Ln, Dallas, GA 30157
+04/17/2024 12:02:32 Extracted Price 334,000
+04/17/2024 12:02:36 Extracted No of Beds 4
+04/17/2024 12:02:39 Extracted No of baths 3
+04/17/2024 12:02:43 Extracted No of Sqft 
+04/17/2024 12:02:47 Extracted property type Single Family Residence
+04/17/2024 12:02:51 Extracted Built In 2018
+04/17/2024 12:02:55 Extracted Zestimate 
+04/17/2024 12:03:00 Extracted Lot Size 026
+04/17/2024 12:03:02 Output file is created and saved in  Zillow_Homes_Dallas, GA_04_17_2024_12_03_02.csv
+04/17/2024 12:03:02 Process ended
